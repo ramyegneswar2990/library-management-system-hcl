@@ -34,6 +34,7 @@ public interface IssueRecordRepository extends JpaRepository<IssueRecord, Long> 
     /** All currently active (unreturned) issues for a member */
     List<IssueRecord> findByMemberAndReturnDateIsNull(Member member);
 
-    /** All currently active (unreturned) issues for a member id */
     List<IssueRecord> findByMember_MemberIdAndReturnDateIsNull(Long memberId);
+
+    Optional<IssueRecord> findByIssueIdAndReturnDateIsNull(Long issueId);
 }
